@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { bool, shape, string } from 'prop-types';
 import { useScrollLock } from '@magento/peregrine';
 
@@ -14,6 +14,13 @@ import Footer from '../Footer/index';
 // import defaultClasses from './main.css';
 import Header from '@magento/venia-ui/lib/components/Header';
 import defaultClasses from '@magento/venia-ui/lib/components/Main/main.module.css';
+//----------------------------------------------------------------------------
+import { DartThemeProvider } from "./DarkThemeContext";
+
+import SwitcherTheme from './SwitcherTheme';
+
+
+import "./style.css";
 
 
 const Main = props => {
@@ -25,9 +32,13 @@ const Main = props => {
 
     useScrollLock(isMasked);
 
+
     return (
         <main className={rootClass}>
             <Header />
+            <DartThemeProvider>
+                <SwitcherTheme/>
+            </DartThemeProvider>
             <div className={pageClass}>{children}</div>
             <Footer />
         </main>
