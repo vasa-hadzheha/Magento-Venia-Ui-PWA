@@ -1,4 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
+import './style.css'
+import DarkModeToggle from "react-dark-mode-toggle";
+import { DarkThemeContext } from "./DarkThemeContext";
+
 import { useIntl } from 'react-intl';
 import { array, func, shape, string } from 'prop-types';
 
@@ -101,6 +105,7 @@ const App = props => {
     });
 
     const { hasOverlay, handleCloseDrawer } = talonProps;
+    const { turnOn, setTurnOn, mainColor } = useContext(DarkThemeContext);
 
     if (renderError) {
         return (
@@ -112,21 +117,35 @@ const App = props => {
             </HeadProvider>
         );
     }
-
+    
     return (
-        <HeadProvider>
-            <StoreTitle />
-            <Main isMasked={hasOverlay}>
-                <Routes />
-            </Main>
-            <Mask
-                isActive={hasOverlay}
-                dismiss={handleCloseDrawer}
-                data-cy="App-Mask-button"
-            />
-            <Navigation />
-            <ToastContainer />
-        </HeadProvider>
+        <div
+            className="App"
+            style={{
+                backgroundColor: mainColor.bg,
+                //color: mainColor.txt,
+                height: "100vh"
+            }}
+        >
+            <DarkModeToggle onChange={setTurnOn} checked={turnOn} size={80} />
+            <div style={{ color: mainColor.txt }}>
+                <HeadProvider>
+                    <h1>Vasyl</h1>
+                    <h2>Start editing to see some magic happen!</h2>
+                    <StoreTitle />
+                    <Main isMasked={hasOverlay}>
+                        <Routes />
+                    </Main>
+                    <Mask
+                        isActive={hasOverlay}
+                        dismiss={handleCloseDrawer}
+                        data-cy="App-Mask-button"
+                        />
+                    <Navigation />
+                    <ToastContainer />
+                </HeadProvider>
+            </div>
+        </div>
     );
 };
 
