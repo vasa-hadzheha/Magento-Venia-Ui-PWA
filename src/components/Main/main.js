@@ -4,6 +4,11 @@ import { useScrollLock } from '@magento/peregrine';
 
 import { useStyle } from '../../classify.js';
 import Footer from '../Footer/index';
+
+// import Header from '../Header';
+// import defaultClasses from './main.css';
+// import Header from '@magento/venia-ui/lib/components/Header';
+
 import Header from '../Header/index';
 import defaultClasses from '@magento/venia-ui/lib/components/Main/main.module.css';
 
@@ -24,11 +29,15 @@ const Main = props => {
     return (
                 <DartThemeProvider>
         <main className={rootClass}>
-                    <Header />
-                <Mast></Mast>
-                <Footer />
-            </main>
-                </DartThemeProvider>
+
+            <DartThemeProvider>
+            <Header />
+                <SwitcherTheme/>
+            </DartThemeProvider>
+            <div className={pageClass}>{children}</div>
+            <Footer />
+        </main>
+
     );
 };
 

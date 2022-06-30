@@ -29,7 +29,7 @@ import Routes from '@magento/venia-ui/lib/components/Routes';
 import ToastContainer from '@magento/venia-ui/lib/components/ToastContainer';
 import Icon from '@magento/venia-ui/lib/components/Icon';
 
-
+import { DartThemeProvider } from "../Main/DarkThemeContext";
 
 import {
     AlertCircle as AlertCircleIcon,
@@ -119,33 +119,24 @@ const App = props => {
     }
     
     return (
-        <div
-            className="App"
-            style={{
-                backgroundColor: mainColor.bg,
-                //color: mainColor.txt,
-                height: "100vh"
-            }}
-        >
-            <DarkModeToggle onChange={setTurnOn} checked={turnOn} size={80} />
-            <div style={{ color: mainColor.txt }}>
-                <HeadProvider>
-                    <h1>Vasyl</h1>
-                    <h2>Start editing to see some magic happen!</h2>
-                    <StoreTitle />
-                    <Main isMasked={hasOverlay}>
-                        <Routes />
-                    </Main>
-                    <Mask
-                        isActive={hasOverlay}
-                        dismiss={handleCloseDrawer}
-                        data-cy="App-Mask-button"
-                        />
-                    <Navigation />
-                    <ToastContainer />
-                </HeadProvider>
-            </div>
-        </div>
+
+        <HeadProvider>
+            <DartThemeProvider>
+
+            <StoreTitle />
+            <Main isMasked={hasOverlay}>
+                <Routes />
+            </Main>
+            <Mask
+                isActive={hasOverlay}
+                dismiss={handleCloseDrawer}
+                data-cy="App-Mask-button"
+                />
+            <Navigation />
+            <ToastContainer />
+                </DartThemeProvider>
+        </HeadProvider>
+
     );
 };
 

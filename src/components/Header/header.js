@@ -11,7 +11,9 @@ import OnlineIndicator from '@magento/venia-ui/lib/components/Header/onlineIndic
 import { useHeader } from '@magento/peregrine/lib/talons/Header/useHeader';
 import resourceUrl from '@magento/peregrine/lib/util/makeUrl';
 
-import { useStyle } from '../../classify.js';
+
+import { useStyle } from '@magento/venia-ui/lib/classify';
+
 import defaultClasses from '@magento/venia-ui/lib/components/Header/header.module.css';
 import StoreSwitcher from '@magento/venia-ui/lib/components/Header/storeSwitcher';
 import CurrencySwitcher from '@magento/venia-ui/lib/components/Header/currencySwitcher';
@@ -19,6 +21,12 @@ import MegaMenu from '@magento/venia-ui/lib/components/MegaMenu';
 import PageLoadingIndicator from '@magento/venia-ui/lib/components/PageLoadingIndicator';
 
 const SearchBar = React.lazy(() => import('@magento/venia-ui/lib/components/SearchBar'));
+
+
+import "./style.css";
+import DarkModeToggle from "react-dark-mode-toggle";
+import { DarkThemeContext } from "./DarkThemeContext";
+=======
 
 
 
@@ -57,7 +65,7 @@ const Header = props => {
     ) : null;
 
     return (
-        
+
         <Fragment>
             <div className={classes.switchersContainer}>
                 <div className={classes.switchers} data-cy="Header-switchers">
@@ -95,7 +103,6 @@ const Header = props => {
                 <PageLoadingIndicator absolute />
             </header>
         </Fragment>
-
     );
 };
 

@@ -15,7 +15,7 @@ import resourceUrl from '@magento/peregrine/lib/util/makeUrl';
 
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import defaultClasses from "@magento/venia-ui/lib/components/Footer/footer.module.css"
-import { DEFAULT_LINKS, LOREM_IPSUM } from "@magento/venia-ui/lib/components/Footer/sampleData";
+import { DEFAULT_LINKS, LOREM_IPSUM } from "./sampleData";
 // import GET_STORE_CONFIG_DATA from '@magento/venia-ui/lib/queries/getStoreConfigData.graphql';
 
 const Footer = props => {
@@ -62,11 +62,11 @@ const Footer = props => {
     return (
         <footer className={classes.root}>
       <div className={classes.links}>
-+       <div className={classes.link}>
-+         <Link to="/foo">
-+           <span className={classes.label}>Foo Demo Page</span>
-+         </Link>
-+       </div>
+       <div className={classes.link}>
+         <Link to="/foo">
+           <span className={classes.label}></span>
+         </Link>
+     </div>
         {linkGroups}
       </div>
       <div className={classes.callout}/>

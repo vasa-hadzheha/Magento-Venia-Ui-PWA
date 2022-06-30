@@ -17,7 +17,7 @@ export default function SwitcherTheme() {
     >
       <DarkModeToggle onChange={setTurnOn} checked={turnOn} size={80} />
       <div style={{ color: mainColor.txt }}>
-        <h1>Hello CodeSandbox</h1>
+        <h1>HELLO VASYL</h1>
         <h2>Start editing to see some magic happen!</h2>
       </div>
     </div>
