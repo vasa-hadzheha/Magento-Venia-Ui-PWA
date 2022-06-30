@@ -20,13 +20,11 @@ import PageLoadingIndicator from '@magento/venia-ui/lib/components/PageLoadingIn
 
 const SearchBar = React.lazy(() => import('@magento/venia-ui/lib/components/SearchBar'));
 
-import "./style.css";
-import DarkModeToggle from "react-dark-mode-toggle";
-import { DarkThemeContext } from "./DarkThemeContext";
+
 
 
 const Header = props => {
-    const { turnOn, setTurnOn, mainColor } = useContext(DarkThemeContext);
+    
 
     const {
         handleSearchTriggerClick,
@@ -59,16 +57,7 @@ const Header = props => {
     ) : null;
 
     return (
-        <div
-      className="App"
-      style={{
-        backgroundColor: mainColor.bg,
-        //color: mainColor.txt,
-        height: "100vh"
-      }}
-    >
-      <DarkModeToggle onChange={setTurnOn} checked={turnOn} size={80} />
-      <div style={{ color: mainColor.txt }}>
+        
         <Fragment>
             <div className={classes.switchersContainer}>
                 <div className={classes.switchers} data-cy="Header-switchers">
@@ -106,8 +95,7 @@ const Header = props => {
                 <PageLoadingIndicator absolute />
             </header>
         </Fragment>
-      </div>
-    </div>
+
     );
 };
 

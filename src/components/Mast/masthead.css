@@ -1,0 +1,120 @@
+
+.flexing_item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: calc(100% - var(--padding) * 2);
+    flex: auto;
+}
+
+.wrapper{
+    
+}
+
+.foto1{
+    width: 100%;
+
+}
+
+.foto1_text{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    text-align: left;
+    left: 300px;
+}
+
+.foto2{
+    height: 100%;
+    width: 200%;
+    object-fit: cover;
+}
+
+
+.foto3{
+    position: absolute;
+    padding: 150px;
+    align-items: center;
+}
+
+.container{
+    margin: 0 auto;
+}
+
+.text_item{
+    overflow-wrap: break-word;
+    text-align: start;
+    pointer-events: none;
+    min-height: var(--min-height);
+    min-width: var(--min-width);
+}
+
+.item_second_grid{
+
+}
+
+.timer_back{
+    align-items: center;
+    padding: 50px 0 20px 0;
+    color: orange;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+
+
+.tttimer{
+    width: 100%;
+    background: url('src/components/Mast/img/panoramy-prirody-4.jpg') 50% no-repeat;
+}
+
+
+
+
+.timer {
+    text-align: center;
+    height: 130px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: default;
+    padding: 0 0 20px 0;
+  }
+  
+  /*       текст под цифрами       */
+  .days, .hours, .minutes, .seconds {
+    font-size: 55px;
+    font-family: DS-Digital;
+    font-weight: 600;
+    margin: 0 auto;
+  }
+  
+  /*         цифры таймера         */
+  .uncorrectDays, .uncorrectHours,
+  .uncorrectMinutes, .uncorrectSeconds {
+    color: white;
+    font-size: 18px;
+    font-family: 'Lato Light', sans-serif;
+  }
+  
+  /*      блоки хранящие цифры      */
+  .days-block, .hours-block, .minutes-block, .seconds-block {
+    background: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .timer-section {
+    display: inline-block;
+  }
+  
+  .timer-text {
+    display: block;
+    font-size: 12px;
+  }

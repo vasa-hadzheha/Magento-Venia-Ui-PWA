@@ -9,6 +9,9 @@ import defaultClasses from '@magento/venia-ui/lib/components/Main/main.module.cs
 
 import { DartThemeProvider } from "./DarkThemeContext"
 
+//Maklaud
+import Mast from '../Mast/index.js';
+
 const Main = props => {
     const { children, isMasked } = props;
     const classes = useStyle(defaultClasses, props.classes);
@@ -22,7 +25,7 @@ const Main = props => {
                 <DartThemeProvider>
         <main className={rootClass}>
                     <Header />
-                <div className={pageClass}>{children}</div>
+                <Mast></Mast>
                 <Footer />
             </main>
                 </DartThemeProvider>
