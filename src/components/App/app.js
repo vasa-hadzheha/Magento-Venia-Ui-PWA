@@ -25,7 +25,7 @@ import Routes from '@magento/venia-ui/lib/components/Routes';
 import ToastContainer from '@magento/venia-ui/lib/components/ToastContainer';
 import Icon from '@magento/venia-ui/lib/components/Icon';
 
-
+import { DartThemeProvider } from "../Main/DarkThemeContext";
 
 import {
     AlertCircle as AlertCircleIcon,
@@ -115,6 +115,8 @@ const App = props => {
 
     return (
         <HeadProvider>
+            <DartThemeProvider>
+
             <StoreTitle />
             <Main isMasked={hasOverlay}>
                 <Routes />
@@ -123,9 +125,10 @@ const App = props => {
                 isActive={hasOverlay}
                 dismiss={handleCloseDrawer}
                 data-cy="App-Mask-button"
-            />
+                />
             <Navigation />
             <ToastContainer />
+                </DartThemeProvider>
         </HeadProvider>
     );
 };

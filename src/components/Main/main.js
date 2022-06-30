@@ -12,7 +12,8 @@ import { useStyle } from '@magento/venia-ui/lib/classify';
 import Footer from '../Footer/index';
 // import Header from '../Header';
 // import defaultClasses from './main.css';
-import Header from '@magento/venia-ui/lib/components/Header';
+// import Header from '@magento/venia-ui/lib/components/Header';
+import Header from '../Header/index';
 import defaultClasses from '@magento/venia-ui/lib/components/Main/main.module.css';
 //----------------------------------------------------------------------------
 import { DartThemeProvider } from "./DarkThemeContext";
@@ -35,8 +36,8 @@ const Main = props => {
 
     return (
         <main className={rootClass}>
-            <Header />
             <DartThemeProvider>
+            <Header />
                 <SwitcherTheme/>
             </DartThemeProvider>
             <div className={pageClass}>{children}</div>
