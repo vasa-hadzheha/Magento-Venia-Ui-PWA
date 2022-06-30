@@ -1,4 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
+import './style.css'
+import DarkModeToggle from "react-dark-mode-toggle";
+import { DarkThemeContext } from "./DarkThemeContext";
+
 import { useIntl } from 'react-intl';
 import { array, func, shape, string } from 'prop-types';
 
@@ -101,6 +105,7 @@ const App = props => {
     });
 
     const { hasOverlay, handleCloseDrawer } = talonProps;
+    const { turnOn, setTurnOn, mainColor } = useContext(DarkThemeContext);
 
     if (renderError) {
         return (
@@ -112,8 +117,9 @@ const App = props => {
             </HeadProvider>
         );
     }
-
+    
     return (
+
         <HeadProvider>
             <DartThemeProvider>
 
@@ -130,6 +136,7 @@ const App = props => {
             <ToastContainer />
                 </DartThemeProvider>
         </HeadProvider>
+
     );
 };
 

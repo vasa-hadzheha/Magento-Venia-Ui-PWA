@@ -9,7 +9,7 @@ import StoreCodeRoute from '@magento/venia-ui/lib/components/StoreCodeRoute';
 
 // - import App, { AppContextProvider } from '@magento/venia-ui/lib/components/App';
 import { AppContextProvider } from '@magento/venia-ui/lib/components/App';
-import App from '../App/index';
+import App from '../App/index.js';
 
 
 const Adapter = props => {
